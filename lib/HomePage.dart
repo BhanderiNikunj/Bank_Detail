@@ -39,6 +39,22 @@ class _HomeState extends State<Home> {
     "Assets/Images/BankLogo/yb.png",
   ];
 
+  List Bank_Url = [
+    "https://www.axisbank.com",
+    "https://www.cityunionbank.com",
+    "https://www.bankofbaroda.in",
+    "https://bankofindia.co.in",
+    "https://punjabandsindbank.co.in",
+    "https://sbi.co.in",
+    "https://www.unionbankofindia.co.in/english/home.aspx",
+    "https://www.hdfcbank.com",
+    "https://www.icicibank.com",
+    "https://www.kotak.com/en/home.html",
+    "https://www.nainitalbank.co.in/english/home.aspx",
+    "https://www.yesbank.in",
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,18 +62,18 @@ class _HomeState extends State<Home> {
         body: ListView.builder(
           itemCount: Name.length,
           itemBuilder: (context, index) =>
-              Bank_Name(Name[index], Bank_Logo[index]),
+              Bank_Name(Name[index], Bank_Logo[index],Bank_Url[index]),
         ),
       ),
     );
   }
 
-  Widget Bank_Name(String Name, String Logo) {
+  Widget Bank_Name(String Name, String Logo,String Url) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Data d1 = Data(Logo: Logo,Name: Name);
+          Data d1 = Data(Logo: Logo,Name: Name,Url: Url);
           Navigator.pushNamed(context, 'detail',arguments: d1);
         },
         child: Container(

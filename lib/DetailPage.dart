@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:bank_detail/ModalData.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +28,12 @@ class _DetailState extends State<Detail> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print(d1.Url);
+                },
+                child: Text("Website"),
               ),
             ],
           ),
