@@ -23,7 +23,6 @@ class _HomeState extends State<Home> {
     "Nainital bank Ltd.",
     "YES Bank Ltd.",
   ];
-
   List Bank_Logo = [
     "Assets/Images/BankLogo/Axis.png",
     "Assets/Images/BankLogo/cub.png",
@@ -38,7 +37,6 @@ class _HomeState extends State<Home> {
     "Assets/Images/BankLogo/nb.png",
     "Assets/Images/BankLogo/yb.png",
   ];
-
   List Bank_Url = [
     "https://www.axisbank.com",
     "https://www.cityunionbank.com",
@@ -46,12 +44,26 @@ class _HomeState extends State<Home> {
     "https://bankofindia.co.in",
     "https://punjabandsindbank.co.in",
     "https://sbi.co.in",
-    "https://www.unionbankofindia.co.in/english/home.aspx",
+    "https://www.unionbankofindia.co.in",
     "https://www.hdfcbank.com",
     "https://www.icicibank.com",
     "https://www.kotak.com/en/home.html",
-    "https://www.nainitalbank.co.in/english/home.aspx",
+    "https://www.nainitalbank.co.in",
     "https://www.yesbank.in",
+  ];
+  List Bank_Call = [
+    "1800-419-5959",
+    "0447-122-8000",
+    "1800-258-4455",
+    "1800-103-1906",
+    "1800-419-8300",
+    "1800-425-3800",
+    "0792-658-0724",
+    "1800-202-6161",
+    "1800-1080",
+    "1860-266-2666",
+    "1800-180-4031",
+    "1800-103-1212",
   ];
 
 
@@ -62,18 +74,18 @@ class _HomeState extends State<Home> {
         body: ListView.builder(
           itemCount: Name.length,
           itemBuilder: (context, index) =>
-              Bank_Name(Name[index], Bank_Logo[index],Bank_Url[index]),
+              Bank_Name(Name[index], Bank_Logo[index],Bank_Url[index],Bank_Call[index]),
         ),
       ),
     );
   }
 
-  Widget Bank_Name(String Name, String Logo,String Url) {
+  Widget Bank_Name(String Name, String Logo,String Url,String Call) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Data d1 = Data(Logo: Logo,Name: Name,Url: Url);
+          Data d1 = Data(Logo: Logo,Name: Name,Url: Url,Call: Call);
           Navigator.pushNamed(context, 'detail',arguments: d1);
         },
         child: Container(

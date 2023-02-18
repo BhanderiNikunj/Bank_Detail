@@ -1,9 +1,10 @@
  class Data {
-  String? Logo, Name,Url;
+  String? Logo, Name,Url,Call;
 
   Data({
     this.Logo,
     this.Name,
-    this.Url
+    this.Url,
+    this.Call,
   });
 }
