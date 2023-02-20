@@ -65,36 +65,55 @@ class _HomeState extends State<Home> {
     "1800-180-4031",
     "1800-103-1212",
   ];
-
-
+  List Bank_Email = [
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+    "nikunjbhanderi135@gmail.com",
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: ListView.builder(
           itemCount: Name.length,
-          itemBuilder: (context, index) =>
-              Bank_Name(Name[index], Bank_Logo[index],Bank_Url[index],Bank_Call[index]),
+          itemBuilder: (context, index) => Bank_Name(
+              Name[index], Bank_Logo[index], Bank_Url[index], Bank_Call[index],Bank_Email[index]),
         ),
       ),
     );
   }
 
-  Widget Bank_Name(String Name, String Logo,String Url,String Call) {
+  Widget Bank_Name(String Name, String Logo, String Url, String Call,String Email) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          Data d1 = Data(Logo: Logo,Name: Name,Url: Url,Call: Call);
-          Navigator.pushNamed(context, 'detail',arguments: d1);
+          Data d1 = Data(Logo: Logo, Name: Name, Url: Url, Call: Call,Email: Email);
+          Navigator.pushNamed(context, 'detail', arguments: d1);
         },
         child: Container(
           height: 80,
           width: double.infinity,
-          color: Colors.black12,
+          decoration: BoxDecoration(
+            color: Colors.black12,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.black),
+          ),
           alignment: Alignment.center,
           child: Row(
             children: [
+              SizedBox(
+                width: 15,
+              ),
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -105,7 +124,12 @@ class _HomeState extends State<Home> {
                   width: 60,
                 ),
               ),
+              SizedBox(
+                width: 20,
+              ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "$Name",

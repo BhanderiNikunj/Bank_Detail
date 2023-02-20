@@ -23,7 +23,7 @@ class _LogoState extends State<Logo> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Image.asset("Assets/Images/bank app logo.jpg"),
+          child: Image.asset("Assets/Images/logo.jpg"),
         ),
       ),
     );
